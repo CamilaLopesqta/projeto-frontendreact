@@ -1,19 +1,19 @@
 import React from "react";
 import { ProdutosContainer } from "./ProdutosStyle";
 
-
 function Produtos(props) {
   
-  const { image, name, description, price } = props
-
-   return (
-      <ProdutosContainer>
-        <img src={image} alt={name} /> 
-        <h2>{name}</h2>
-        <h3>{description}</h3>
-        <p>{price}</p> 
-      </ProdutosContainer>
-    );
-  }
   
-  export default Produtos;
+  return (
+
+    <ProdutosContainer key={props.id}>
+      <img src={props.imagem} alt="Nome do brinquedo" />
+      <h3>{props.nome}</h3>
+      <p>{props.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }, { minimumFractionDigits: 2 })}</p>
+      <button onClick={()=>{props.addProdutoCarrinho(props.id)}}>Comprar</button>
+    </ProdutosContainer>
+
+  );
+}
+
+export default Produtos;
