@@ -26,8 +26,7 @@ export const GlobalStyle = createGlobalStyle`
 
     p {
         font-family: croissant one, sans-serif;
-        background: var(--darkcyan);
-        color: var(--soft-white);
+        color: var(--yellowgreen);
     }
 
     body { 
